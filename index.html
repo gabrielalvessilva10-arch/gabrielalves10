@@ -1,0 +1,1789 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mecânica Precision - Av. Tupi 67, Pato Branco - PR</title>
+    <!-- Google Fonts & FontAwesome icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #ff5722;
+            --primary-hover: #e64a19;
+            --secondary: #1e2530;
+            --dark-bg: #12161f;
+            --card-bg: #1a212d;
+            --accent: #2196f3;
+            --text-light: #f5f5f7;
+            --text-muted: #9e9e9e;
+            --border-color: #2a3444;
+            --success: #4caf50;
+            --gold: #ffc107;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        /* Header & Navigation */
+        .top-bar {
+            background-color: #0b0d12;
+            padding: 8px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .top-bar-info span {
+            margin-right: 20px;
+        }
+
+        .top-bar-info i {
+            color: var(--primary);
+            margin-right: 6px;
+        }
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: rgba(30, 37, 48, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text-light);
+        }
+
+        .logo i {
+            font-size: 2.2rem;
+            color: var(--primary);
+        }
+
+        .logo-text h1 {
+            font-size: 1.4rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .logo-text span {
+            color: var(--primary);
+        }
+
+        .logo-text p {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: var(--transition);
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary);
+        }
+
+        .btn-header {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-header:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 87, 34, 0.4);
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-light);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 85vh;
+            background: linear-gradient(rgba(18, 22, 31, 0.85), rgba(18, 22, 31, 0.95)), 
+                        url('https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            padding: 0 5%;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .badge {
+            background-color: rgba(255, 87, 34, 0.2);
+            color: var(--primary);
+            border: 1px solid var(--primary);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .hero-title {
+            font-size: 3.2rem;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .hero-title span {
+            color: var(--primary);
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: #ccc;
+            margin-bottom: 35px;
+            max-width: 650px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 14px 28px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 87, 34, 0.4);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-light);
+            border: 2px solid #555;
+            padding: 12px 26px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            background-color: var(--card-bg);
+            border-y: 1px solid var(--border-color);
+            padding: 30px 5%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 10px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .stat-label {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 5px;
+        }
+
+        /* General Section Styling */
+        section {
+            padding: 90px 5%;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-subtitle {
+            color: var(--primary);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .section-title {
+            font-size: 2.4rem;
+            text-transform: uppercase;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 4px;
+            background-color: var(--primary);
+            border-radius: 2px;
+        }
+
+        /* Services Tab Section */
+        .services-section {
+            background-color: var(--dark-bg);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 35px 25px;
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background-color: var(--primary);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+            border-color: rgba(255, 87, 34, 0.3);
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background-color: rgba(255, 87, 34, 0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 22px;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-icon {
+            background-color: var(--primary);
+            color: #fff;
+        }
+
+        .service-title {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: #fff;
+        }
+
+        .service-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-bottom: 20px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 15px;
+        }
+
+        .service-features li {
+            font-size: 0.88rem;
+            color: #ccc;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .service-features li i {
+            color: var(--primary);
+            font-size: 0.75rem;
+        }
+
+        .service-price {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* Gallery / Fotos de Serviços */
+        .gallery-section {
+            background-color: var(--secondary);
+        }
+
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background-color: var(--card-bg);
+            color: var(--text-light);
+            border: 1px solid var(--border-color);
+            padding: 8px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: var(--transition);
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            color: #fff;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            height: 240px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 20px;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-title {
+            font-size: 1.1rem;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+
+        .gallery-category {
+            font-size: 0.8rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        /* Atendimento & Suporte */
+        .atendimento-section {
+            background-color: var(--dark-bg);
+        }
+
+        .atendimento-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .atendimento-box {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 40px;
+            border: 1px solid var(--border-color);
+        }
+
+        .schedule-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .schedule-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            font-size: 0.95rem;
+        }
+
+        .schedule-item:last-child {
+            border-bottom: none;
+        }
+
+        .emergency-banner {
+            background: linear-gradient(135deg, var(--primary), #d84315);
+            border-radius: 8px;
+            padding: 30px;
+            margin-top: 25px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .emergency-banner i {
+            font-size: 2.8rem;
+        }
+
+        .emergency-text h4 {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+
+        .emergency-text p {
+            font-size: 0.9rem;
+            margin-top: 4px;
+        }
+
+        /* FAQ Accordion */
+        .faq-item {
+            background-color: var(--card-bg);
+            border-radius: 6px;
+            margin-bottom: 15px;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 18px 20px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .faq-question:hover {
+            color: var(--primary);
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            color: var(--text-muted);
+            font-size: 0.92rem;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 20px 20px 20px;
+            max-height: 200px;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+            color: var(--primary);
+        }
+
+        /* Dynamic PIX Payment Section */
+        .payment-section {
+            background-color: var(--secondary);
+            border-y: 1px solid var(--border-color);
+        }
+
+        .payment-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .payment-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 40px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .payment-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .payment-header img {
+            height: 35px;
+        }
+
+        .pix-key-badge {
+            background-color: rgba(33, 150, 243, 0.1);
+            border: 1px dashed var(--accent);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .pix-key-text {
+            font-size: 0.9rem;
+        }
+
+        .pix-key-text strong {
+            display: block;
+            color: var(--accent);
+            font-size: 1.1rem;
+            margin-top: 3px;
+            font-family: monospace;
+            letter-spacing: 1px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.88rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-light);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 14px 16px;
+            background-color: #12161f;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            color: #fff;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(255, 87, 34, 0.2);
+        }
+
+        .qr-display-box {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 40px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 480px;
+        }
+
+        .qr-code-frame {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            display: inline-block;
+        }
+
+        .qr-code-frame img {
+            width: 220px;
+            height: 220px;
+            display: block;
+        }
+
+        .pix-copy-box {
+            width: 100%;
+            background-color: #12161f;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            margin-top: 15px;
+        }
+
+        .pix-copy-input {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            width: 100%;
+            font-size: 0.8rem;
+            font-family: monospace;
+            padding-right: 10px;
+        }
+
+        /* Contact & Location Section */
+        .contact-section {
+            background-color: var(--dark-bg);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .contact-info-list {
+            list-style: none;
+            margin-top: 25px;
+        }
+
+        .contact-info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 18px;
+            margin-bottom: 25px;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 87, 34, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .contact-details h5 {
+            font-size: 1.05rem;
+            margin-bottom: 4px;
+        }
+
+        .contact-details p {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+        }
+
+        .map-container {
+            border-radius: 12px;
+            overflow: hidden;
+            border: 2px solid var(--border-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            height: 100%;
+            min-height: 380px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0b0d12;
+            padding: 60px 5% 20px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            color: #fff;
+            position: relative;
+            padding-bottom: 8px;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background-color: var(--primary);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .social-icon {
+            width: 38px;
+            height: 38px;
+            background-color: var(--card-bg);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-decoration: none;
+            transition: var(--transition);
+            border: 1px solid var(--border-color);
+        }
+
+        .social-icon:hover {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Modal Lightbox */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            max-width: 900px;
+            max-height: 80vh;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+        }
+
+        .modal-content img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 25px;
+            right: 35px;
+            color: #fff;
+            font-size: 2.2rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .modal-close:hover {
+            color: var(--primary);
+        }
+
+        /* Toast notification */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--success);
+            color: #fff;
+            padding: 14px 24px;
+            border-radius: 6px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 3000;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            .atendimento-container, .payment-wrapper, .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-bar {
+                display: none;
+            }
+            .mobile-toggle {
+                display: block;
+            }
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background-color: var(--secondary);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 30px;
+                transition: var(--transition);
+            }
+            .nav-links.active {
+                left: 0;
+            }
+            .btn-header {
+                display: none;
+            }
+            .hero-title {
+                font-size: 2rem;
+            }
+            section {
+                padding: 60px 5%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Info Bar -->
+    <div class="top-bar">
+        <div class="top-bar-info">
+            <span><i class="fa-solid fa-location-dot"></i> Av. Tupi, 67 - Pato Branco, PR</span>
+            <span><i class="fa-solid fa-clock"></i> Seg - Sex: 08:00 - 18:00 | Sáb: 08:00 - 12:00</span>
+        </div>
+        <div class="top-bar-info">
+            <span><i class="fa-solid fa-phone"></i> (46) 3225-0000</span>
+            <span><i class="fa-brands fa-whatsapp"></i> (46) 99900-1122</span>
+        </div>
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <nav class="navbar">
+        <a href="#inicio" class="logo">
+            <i class="fa-solid fa-gears"></i>
+            <div class="logo-text">
+                <h1>Precision <span>Mecânica</span></h1>
+                <p>PATO BRANCO - PR</p>
+            </div>
+        </a>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#inicio" class="active">Início</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#fotos">Fotos</a></li>
+            <li><a href="#atendimento">Atendimento</a></li>
+            <li><a href="#pagamento">Pagamentos PIX</a></li>
+            <li><a href="#contato">Localização & Contato</a></li>
+        </ul>
+
+        <a href="https://wa.me/5546999001122" target="_blank" class="btn-header">
+            <i class="fa-brands fa-whatsapp"></i> Agendar WhatsApp
+        </a>
+
+        <div class="mobile-toggle" id="mobileToggle">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <span class="badge"><i class="fa-solid fa-shield-halved"></i> Referência em Pato Branco - PR</span>
+            <h1 class="hero-title">Especialistas em <span>Manutenção</span> & Diagnóstico Automotivo</h1>
+            <p class="hero-subtitle">Mecânica de precisão, injeção eletrônica, revisão preventiva e reparações complexas. Equipamentos de última geração localizados no coração de Pato Branco.</p>
+            <div class="hero-btns">
+                <a href="#servicos" class="btn-primary"><i class="fa-solid fa-wrench"></i> Conheça Nossos Serviços</a>
+                <a href="#pagamento" class="btn-secondary"><i class="fa-solid fa-qrcode"></i> Pagar via PIX</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stat Highlights -->
+    <div class="stats-bar">
+        <div class="stat-item">
+            <div class="stat-number">15+</div>
+            <div class="stat-label">Anos em Pato Branco</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">8.500+</div>
+            <div class="stat-label">Veículos Atendidos</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Garantia nos Serviços</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">4.9 ★</div>
+            <div class="stat-label">Avaliação de Clientes</div>
+        </div>
+    </div>
+
+    <!-- Aba / Seção de Serviços -->
+    <section class="services-section" id="servicos">
+        <div class="section-header">
+            <span class="section-subtitle">O Que Fazemos</span>
+            <h2 class="section-title">Nossos Serviços Especializados</h2>
+        </div>
+
+        <div class="services-grid">
+            <!-- Service 1 -->
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-microchip"></i></div>
+                <h3 class="service-title">Injeção Eletrônica & Diagnóstico 3D</h3>
+                <p class="service-desc">Leitura computadorizada avançada de falhas de motor, reprogramação de módulos, teste de sensores e atuadores.</p>
+                <ul class="service-features">
+                    <li><i class="fa-solid fa-check"></i> Scanner de última geração</li>
+                    <li><i class="fa-solid fa-check"></i> Análise de emissão de gases</li>
+                    <li><i class="fa-solid fa-check"></i> Limpeza de bicos injetores por ultrassom</li>
+                </ul>
+                <div class="service-price">
+                    <span>A partir de R$ 120,00</span>
+                    <a href="#pagamento" class="btn-primary" style="padding:6px 12px; font-size:0.75rem;">Pagar Pix</a>
+                </div>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-car-side"></i></div>
+                <h3 class="service-title">Freios & Suspensão de Alta Performance</h3>
+                <p class="service-desc">Substituição de pastilhas, discos, amortecedores, buchas, pivôs e sangria de fluido de freio com sistema pressurizado.</p>
+                <ul class="service-features">
+                    <li><i class="fa-solid fa-check"></i> Teste em bancada computadorizada</li>
+                    <li><i class="fa-solid fa-check"></i> Peças originais de reposição</li>
+                    <li><i class="fa-solid fa-check"></i> Revisão de ABS e EBD</li>
+                </ul>
+                <div class="service-price">
+                    <span>A partir de R$ 180,00</span>
+                    <a href="#pagamento" class="btn-primary" style="padding:6px 12px; font-size:0.75rem;">Pagar Pix</a>
+                </div>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-oil-can"></i></div>
+                <h3 class="service-title">Troca de Óleo & Filtros Premium</h3>
+                <p class="service-desc">Lubrificantes sintéticos e semissintéticos homologados pelas montadoras. Troca completa de filtros de ar, combustível e cabine.</p>
+                <ul class="service-features">
+                    <li><i class="fa-solid fa-check"></i> Óleos homologados API / ACEA</li>
+                    <li><i class="fa-solid fa-check"></i> Check-up de 20 itens cortesia</li>
+                    <li><i class="fa-solid fa-check"></i> Reset do indicador de revisão</li>
+                </ul>
+                <div class="service-price">
+                    <span>A partir de R$ 150,00</span>
+                    <a href="#pagamento" class="btn-primary" style="padding:6px 12px; font-size:0.75rem;">Pagar Pix</a>
+                </div>
+            </div>
+
+            <!-- Service 4 -->
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-compact-disc"></i></div>
+                <h3 class="service-title">Alinhamento 3D & Balanceamento</h3>
+                <p class="service-desc">Geometria de direção a laser 3D para perfeito desgaste de pneus e estabilidade máxima na rodovia.</p>
+                <ul class="service-features">
+                    <li><i class="fa-solid fa-check"></i> Alinhamento a laser computadorizado</li>
+                    <li><i class="fa-solid fa-check"></i> Balanceamento de rodas de liga leve</li>
+                    <li><i class="fa-solid fa-check"></i> Checagem de cambagem e cáster</li>
+                </ul>
+                <div class="service-price">
+                    <span>A partir de R$ 90,00</span>
+                    <a href="#pagamento" class="btn-primary" style="padding:6px 12px; font-size:0.75rem;">Pagar Pix</a>
+                </div>
+            </div>
+
+            <!-- Service 5 -->
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-cogs"></i></div>
+                <h3 class="service-title">Revisão do Motor & Correia Dentada</h3>
+                <p class="service-desc">Troca preventiva do kit de correia dentada, bomba d'água, retentores e retífica completa de cabeçotes e bloco.</p>
+                <ul class="service-features">
+                    <li><i class="fa-solid fa-check"></i> Torquamento segundo especificações de fábrica</li>
+                    <li><i class="fa-solid fa-check"></i> Teste de estanqueidade</li>
+                    <li><i class="fa-solid fa-check"></i> Substituição do líquido de arrefecimento</li>
+                </ul>
+                <div class="service-price">
+                    <span>Sob Consulta</span>
+                    <a href="#pagamento" class="btn-primary" style="padding:6px 12px; font-size:0.75rem;">Pagar Pix</a>
+                </div>
+            </div>
+
+            <!-- Service 6 -->
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-snowflake"></i></div>
+                <h3 class="service-title">Ar Condicionado Automotivo</h3>
+                <p class="service-desc">Higienização com ozônio, recarga do gás refrigerante R134a/R1234yf, detecção de vazamentos e manutenção de compressores.</p>
+                <ul class="service-features">
+                    <li><i class="fa-solid fa-check"></i> Carga de gás com vácuo computadorizado</li>
+                    <li><i class="fa-solid fa-check"></i> Sanitização anti-bacteriana</li>
+                    <li><i class="fa-solid fa-check"></i> Substituição do filtro de cabine</li>
+                </ul>
+                <div class="service-price">
+                    <span>A partir de R$ 160,00</span>
+                    <a href="#pagamento" class="btn-primary" style="padding:6px 12px; font-size:0.75rem;">Pagar Pix</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Aba / Seção Galeria / Fotos de Serviços -->
+    <section class="gallery-section" id="fotos">
+        <div class="section-header">
+            <span class="section-subtitle">Galeria de Trabalhos</span>
+            <h2 class="section-title">Fotos dos Serviços Realizados</h2>
+        </div>
+
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">Todos</button>
+            <button class="filter-btn" data-filter="motor">Motores</button>
+            <button class="filter-btn" data-filter="suspensao">Suspensão & Freios</button>
+            <button class="filter-btn" data-filter="diagnostico">Injeção & Elétrica</button>
+        </div>
+
+        <div class="gallery-grid">
+            <div class="gallery-item" data-category="motor">
+                <img src="https://images.unsplash.com/photo-1486006920555-c77dce18193b?auto=format&fit=crop&w=800&q=80" alt="Revisão Completa de Motor">
+                <div class="gallery-overlay">
+                    <h4 class="gallery-title">Revisão Geral do Motor V6</h4>
+                    <span class="gallery-category">Motores</span>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="suspensao">
+                <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=800&q=80" alt="Troca de Freios">
+                <div class="gallery-overlay">
+                    <h4 class="gallery-title">Troca de Discos e Pastilhas Cerâmicas</h4>
+                    <span class="gallery-category">Suspensão & Freios</span>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="diagnostico">
+                <img src="https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?auto=format&fit=crop&w=800&q=80" alt="Diagnóstico Computadorizado">
+                <div class="gallery-overlay">
+                    <h4 class="gallery-title">Diagnóstico Eletrônico Computadorizado</h4>
+                    <span class="gallery-category">Injeção & Elétrica</span>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="motor">
+                <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80" alt="Troca de Correia Dentada">
+                <div class="gallery-overlay">
+                    <h4 class="gallery-title">Troca do Kit de Correia Dentada</h4>
+                    <span class="gallery-category">Motores</span>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="suspensao">
+                <img src="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=800&q=80" alt="Alinhamento 3D">
+                <div class="gallery-overlay">
+                    <h4 class="gallery-title">Alinhamento 3D de Precisão</h4>
+                    <span class="gallery-category">Suspensão & Freios</span>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="diagnostico">
+                <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=800&q=80" alt="Limpeza de Bicos">
+                <div class="gallery-overlay">
+                    <h4 class="gallery-title">Limpeza e Calibração de Injetores</h4>
+                    <span class="gallery-category">Injeção & Elétrica</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Aba / Seção Atendimento e Suporte -->
+    <section class="atendimento-section" id="atendimento">
+        <div class="section-header">
+            <span class="section-subtitle">Horários & Suporte</span>
+            <h2 class="section-title">Atendimento ao Cliente</h2>
+        </div>
+
+        <div class="atendimento-container">
+            <div class="atendimento-box">
+                <h3 style="font-size:1.5rem; margin-bottom:15px;"><i class="fa-solid fa-clock" style="color:var(--primary);"></i> Horário de Funcionamento</h3>
+                <p style="color:var(--text-muted); font-size:0.95rem;">Oferecemos atendimento ágil e agendamento pontual em nossa oficina na Av. Tupi, 67 em Pato Branco.</p>
+                
+                <ul class="schedule-list">
+                    <li class="schedule-item">
+                        <span>Segunda a Sexta-feira</span>
+                        <strong style="color:var(--primary);">08:00 - 12:00 | 13:30 - 18:00</strong>
+                    </li>
+                    <li class="schedule-item">
+                        <span>Sábados</span>
+                        <strong style="color:var(--primary);">08:00 - 12:00</strong>
+                    </li>
+                    <li class="schedule-item">
+                        <span>Domingos e Feriados</span>
+                        <span style="color:#777;">Fechado</span>
+                    </li>
+                </ul>
+
+                <div class="emergency-banner">
+                    <i class="fa-solid fa-truck-pickup"></i>
+                    <div class="emergency-text">
+                        <h4>Socorro & Guincho 24h</h4>
+                        <p>Problemas na rodovia em Pato Branco e região? Ligue para nossa equipe de urgência.</p>
+                        <strong style="display:block; margin-top:5px; font-size:1.1rem;">(46) 99900-1122</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="atendimento-box">
+                <h3 style="font-size:1.5rem; margin-bottom:20px;"><i class="fa-solid fa-circle-question" style="color:var(--primary);"></i> Dúvidas Frequentes (FAQ)</h3>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Preciso agendar antes de levar o carro?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Recomendamos o agendamento prévio via WhatsApp para garantir o diagnóstico imediato no horário desejado, contudo realizamos atendimentos emergenciais sem agendamento prévio.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Quais são as formas de pagamento aceitas?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Aceitamos PIX instantâneo (com QR Code gerado diretamente na aba Pagamentos), Cartões de Crédito e Débito (parcelamento em até 10x) e faturamento corporativo para frotas.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Qual a garantia cobrada nos serviços?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Todos os nossos serviços contam com garantia legal de 90 dias, podendo se estender até 1 ano para componentes de suspensão e peças originais selecionadas.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Vocês fornecem orçamento detalhado antes do serviço?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Sim! Nenhuma manutenção é realizada sem a autorização prévia e formal do cliente via WhatsApp ou orçamento impresso.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Aba / Seção de Pagamentos com QR Code PIX Dinâmico -->
+    <section class="payment-section" id="pagamento">
+        <div class="section-header">
+            <span class="section-subtitle">Pagamento Rápido & Seguro</span>
+            <h2 class="section-title">Gerador de Pagamento PIX</h2>
+        </div>
+
+        <div class="payment-wrapper">
+            <!-- Form Card -->
+            <div class="payment-card">
+                <div class="payment-header">
+                    <i class="fa-solid fa-pix" style="font-size:2.5rem; color:#32bcad;"></i>
+                    <div>
+                        <h3 style="font-size:1.3rem;">Pague via PIX Instantâneo</h3>
+                        <p style="font-size:0.85rem; color:var(--text-muted);">Gere o QR Code informando os dados do seu serviço</p>
+                    </div>
+                </div>
+
+                <div class="pix-key-badge">
+                    <div class="pix-key-text">
+                        <span>Chave PIX Oficial (CPF/CNPJ):</span>
+                        <strong>10418469911</strong>
+                    </div>
+                    <button class="btn-primary" onclick="copyPixKey()" style="padding: 8px 14px; font-size: 0.8rem;">
+                        <i class="fa-regular fa-copy"></i> Copiar
+                    </button>
+                </div>
+
+                <form id="pixForm" onsubmit="generatePix(event)">
+                    <div class="form-group">
+                        <label for="clienteNome">Nome do Cliente:</label>
+                        <input type="text" id="clienteNome" class="form-control" placeholder="Ex: João da Silva" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="veiculoPlaca">Placa do Veículo / Serviço:</label>
+                        <input type="text" id="veiculoPlaca" class="form-control" placeholder="Ex: ABC-1234 (Revisão de Freios)" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pixValor">Valor a Pagar (R$):</label>
+                        <input type="number" step="0.01" id="pixValor" class="form-control" placeholder="Ex: 250.00" required>
+                    </div>
+
+                    <button type="submit" class="btn-primary" style="width:100%; justify-content:center; padding:16px;">
+                        <i class="fa-solid fa-qrcode"></i> Gerar QR Code PIX
+                    </button>
+                </form>
+            </div>
+
+            <!-- Dynamic QR Display Card -->
+            <div class="qr-display-box" id="qrContainer">
+                <i class="fa-solid fa-qrcode" style="font-size:4rem; color:var(--border-color); margin-bottom:15px;"></i>
+                <h4 style="color:var(--text-muted);">Aguardando Dados do Pagamento</h4>
+                <p style="font-size:0.85rem; color:#666; max-width:300px; margin-top:8px;">Preencha o formulário ao lado com o valor do serviço para gerar o QR Code exclusivo do seu atendimento.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Aba / Seção Localização & Contato -->
+    <section class="contact-section" id="contato">
+        <div class="section-header">
+            <span class="section-subtitle">Onde Estamos</span>
+            <h2 class="section-title">Localização & Agendamento</h2>
+        </div>
+
+        <div class="contact-container">
+            <div>
+                <h3 style="font-size:1.6rem; margin-bottom:15px;">Venha nos Visitar em Pato Branco</h3>
+                <p style="color:var(--text-muted);">Oficina com fácil acesso na avenida principal de Pato Branco, com pátio amplo para manobras e sala de espera climatizada com Wi-Fi e café expresso.</p>
+
+                <ul class="contact-info-list">
+                    <li class="contact-info-item">
+                        <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <div class="contact-details">
+                            <h5>Endereço Principal</h5>
+                            <p>Avenida Tupi, 67 - Centro / Baixada<br>Pato Branco - PR, CEP 85501-000</p>
+                        </div>
+                    </li>
+
+                    <li class="contact-info-item">
+                        <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                        <div class="contact-details">
+                            <h5>Telefones para Contato</h5>
+                            <p>Fixo: (46) 3225-0000<br>WhatsApp Central: (46) 99900-1122</p>
+                        </div>
+                    </li>
+
+                    <li class="contact-info-item">
+                        <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                        <div class="contact-details">
+                            <h5>E-mail Corporativo</h5>
+                            <p>atendimento@mecanicapatobranco.com.br</p>
+                        </div>
+                    </li>
+                </ul>
+
+                <!-- Form de Agendamento -->
+                <div style="background-color:var(--card-bg); padding:30px; border-radius:8px; border:1px solid var(--border-color); margin-top:20px;">
+                    <h4 style="margin-bottom:15px; color:var(--primary); font-size:1.1rem;">Enviar Mensagem Direta</h4>
+                    <form onsubmit="sendMessage(event)">
+                        <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:10px;">
+                            <input type="text" class="form-control" placeholder="Seu Nome" required>
+                            <input type="tel" class="form-control" placeholder="Seu Telefone" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" rows="3" placeholder="Descreva o problema do veículo ou solicite um orçamento..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary" style="width:100%; justify-content:center;">Enviar Solicitação</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Embedded Google Maps for Av Tupi 67 Pato Branco -->
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3590.870380387531!2d-52.673892!3d-26.233481!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ee02717081e7d3%3A0x86b039cb0e1a1bd!2sAv.%20Tupi%2C%2067%20-%20Pato%20Branco%2C%20PR!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <div class="logo" style="margin-bottom:15px;">
+                    <i class="fa-solid fa-gears"></i>
+                    <div class="logo-text">
+                        <h1>Precision <span>Mecânica</span></h1>
+                        <p>PATO BRANCO - PR</p>
+                    </div>
+                </div>
+                <p style="font-size:0.88rem; color:var(--text-muted);">Sua oficina mecânica de confiança na Av. Tupi, 67 em Pato Branco - PR. Tecnologia moderna e transparência total.</p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Navegação</h4>
+                <ul class="footer-links">
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#servicos">Nossos Serviços</a></li>
+                    <li><a href="#fotos">Galeria de Fotos</a></li>
+                    <li><a href="#atendimento">Atendimento & FAQ</a></li>
+                    <li><a href="#pagamento">Gerador PIX</a></li>
+                    <li><a href="#contato">Localização</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Serviços Populares</h4>
+                <ul class="footer-links">
+                    <li><a href="#servicos">Injeção Eletrônica</a></li>
+                    <li><a href="#servicos">Troca de Óleo</a></li>
+                    <li><a href="#servicos">Freios & ABS</a></li>
+                    <li><a href="#servicos">Alinhamento 3D</a></li>
+                    <li><a href="#servicos">Ar Condicionado</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Chave PIX</h4>
+                <p style="font-size:0.88rem; color:var(--text-muted); margin-bottom:10px;">Chave oficial para pagamentos e sinal de serviços:</p>
+                <div style="background-color:#12161f; padding:10px; border-radius:6px; border:1px solid var(--border-color); font-family:monospace; color:var(--accent); font-weight:bold;">
+                    10418469911
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Precision Mecânica Pato Branco - Av. Tupi, 67. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal for Photo Gallery -->
+    <div class="modal" id="imageModal">
+        <span class="modal-close" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+            <img id="modalImg" src="" alt="Ampliação do Serviço">
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <i class="fa-solid fa-circle-check" style="font-size:1.2rem;"></i>
+        <span id="toastMsg">Chave PIX copiada com sucesso!</span>
+    </div>
+
+    <!-- Scripts Javascript -->
+    <script>
+        // Toggle Nav Bar Mobile
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile nav on link click
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Active link on scroll
+        const sections = document.querySelectorAll('section');
+        const navItems = document.querySelectorAll('.nav-links a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href') === `#${current}`) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Gallery Filter System
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.getAttribute('data-filter');
+
+                galleryItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Modal Lightbox
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImg');
+
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const imgSrc = item.querySelector('img').src;
+                modalImg.src = imgSrc;
+                modal.classList.add('active');
+            });
+        });
+
+        function closeModal() {
+            modal.classList.remove('active');
+        }
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                faqItems.forEach(i => i.classList.remove('active'));
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Toast Notification System
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toastMsg');
+            toastMsg.innerText = message;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        // Copy Pix Key Function
+        function copyPixKey() {
+            const pixKey = "10418469911";
+            navigator.clipboard.writeText(pixKey).then(() => {
+                showToast("Chave PIX (10418469911) copiada com sucesso!");
+            }).catch(err => {
+                showToast("Chave PIX: 10418469911");
+            });
+        }
+
+        // PIX Code Helper Functions (EMV QRCPS Generator for Brazil Pix)
+        function generateCRC16(payload) {
+            let crc = 0xFFFF;
+            for (let i = 0; i < payload.length; i++) {
+                crc ^= payload.charCodeAt(i) << 8;
+                for (let j = 0; j < 8; j++) {
+                    if ((crc & 0x8000) !== 0) {
+                        crc = (crc << 1) ^ 0x1021;
+                    } else {
+                        crc = crc << 1;
+                    }
+                    crc &= 0xFFFF;
+                }
+            }
+            return crc.toString(16).toUpperCase().padStart(4, '0');
+        }
+
+        function generatePixPayload(key, name, city, amount, txid) {
+            function formatField(id, val) {
+                const len = val.length.toString().padStart(2, '0');
+                return `${id}${len}${val}`;
+            }
+
+            const gui = formatField('00', 'br.gov.bcb.pix');
+            const pixKey = formatField('01', key);
+            const merchantAccount = formatField('26', gui + pixKey);
+            
+            const merchantCat = formatField('52', '0000');
+            const currency = formatField('53', '986'); // BRL
+            const formattedAmount = amount ? formatField('54', parseFloat(amount).toFixed(2)) : '';
+            const country = formatField('58', 'BR');
+            const merchantName = formatField('59', name.substring(0, 25));
+            const merchantCity = formatField('60', city.substring(0, 15));
+            const tx = formatField('05', txid || '***');
+            const addData = formatField('62', tx);
+
+            let rawPayload = `000201${merchantAccount}${merchantCat}${currency}${formattedAmount}${country}${merchantName}${merchantCity}${addData}6304`;
+            let crc = generateCRC16(rawPayload);
+            return rawPayload + crc;
+        }
+
+        // Dynamic PIX QR Code Generation
+        function generatePix(e) {
+            e.preventDefault();
+
+            const cliente = document.getElementById('clienteNome').value;
+            const placa = document.getElementById('veiculoPlaca').value;
+            const valor = parseFloat(document.getElementById('pixValor').value).toFixed(2);
+            const pixKey = "10418469911";
+
+            if (!valor || valor <= 0) {
+                alert("Por favor, digite um valor válido para o pagamento.");
+                return;
+            }
+
+            // Generate Pix Payload
+            const payload = generatePixPayload(
+                pixKey, 
+                "PRECISION MECANICA", 
+                "PATO BRANCO", 
+                valor, 
+                "MEC" + Math.floor(Math.random() * 8999 + 1000)
+            );
+
+            // Generate QR Code URL using QR Server API
+            const qrApiUrl = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${encodeURIComponent(payload)}`;
+
+            const qrContainer = document.getElementById('qrContainer');
+            qrContainer.innerHTML = `
+                <div style="text-align:center; width:100%;">
+                    <span class="badge" style="background-color:rgba(76, 175, 80, 0.2); color:var(--success); border-color:var(--success);">
+                        <i class="fa-solid fa-circle-check"></i> Pagamento Gerado
+                    </span>
+                    <h3 style="font-size:1.4rem; margin-top:10px;">R$ ${valor}</h3>
+                    <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:15px;">Cliente: ${cliente} | ${placa}</p>
+
+                    <div class="qr-code-frame">
+                        <img src="${qrApiUrl}" alt="QR Code PIX R$ ${valor}">
+                    </div>
+
+                    <p style="font-size:0.8rem; color:var(--text-muted); margin-top:10px;">Escaneie com o app do seu banco ou copie a chave abaixo:</p>
+
+                    <div class="pix-copy-box">
+                        <input type="text" class="pix-copy-input" id="pixCopiaCola" value="${payload}" readonly>
+                        <button class="btn-primary" onclick="copyPixCode()" style="padding:6px 12px; font-size:0.75rem;">
+                            <i class="fa-regular fa-copy"></i> Copiar
+                        </button>
+                    </div>
+
+                    <div style="margin-top:20px; font-size:0.8rem; color:#888;">
+                        <i class="fa-solid fa-location-dot"></i> Mecânica Precision - Av. Tupi 67, Pato Branco - PR
+                    </div>
+                </div>
+            `;
+
+            showToast("QR Code PIX gerado com sucesso!");
+        }
+
+        function copyPixCode() {
+            const copyInput = document.getElementById('pixCopiaCola');
+            copyInput.select();
+            document.execCommand('copy');
+            showToast("Código PIX Copia e Cola copiado!");
+        }
+
+        function sendMessage(e) {
+            e.preventDefault();
+            showToast("Mensagem enviada com sucesso! Entraremos em contato.");
+            e.target.reset();
+        }
+    </script>
+</body>
+</html>
